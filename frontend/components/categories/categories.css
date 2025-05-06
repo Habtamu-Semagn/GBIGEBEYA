@@ -1,0 +1,229 @@
+.featured-categories {
+  padding: 5rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: #22438c;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #22438c;
+  border-radius: 2px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #22438c, #3a5ca9);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.category-card:hover::before {
+  transform: scaleX(1);
+}
+
+.category-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.category-icon::after {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: rgba(34, 67, 140, 0.1);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover .category-icon::after {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(34, 67, 140, 0.15);
+}
+
+.category-card h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.category-card:hover h3 {
+  color: #22438c;
+}
+
+.category-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Add more category cards styling */
+.category-card:nth-child(2) .category-icon::after {
+  background-color: rgba(255, 107, 107, 0.1);
+}
+
+.category-card:nth-child(2):hover .category-icon::after {
+  background-color: rgba(255, 107, 107, 0.15);
+}
+
+.category-card:nth-child(3) .category-icon::after {
+  background-color: rgba(46, 213, 115, 0.1);
+}
+
+.category-card:nth-child(3):hover .category-icon::after {
+  background-color: rgba(46, 213, 115, 0.15);
+}
+
+.category-card:nth-child(4) .category-icon::after {
+  background-color: rgba(255, 159, 67, 0.1);
+}
+
+.category-card:nth-child(4):hover .category-icon::after {
+  background-color: rgba(255, 159, 67, 0.15);
+}
+
+/* Add a subtle animation for the cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.category-card {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.category-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.category-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.category-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.category-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.category-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.category-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .featured-categories {
+    padding: 4rem 1.5rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .featured-categories {
+    padding: 3rem 1rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .section-header p {
+    font-size: 1rem;
+  }
+  
+  .category-grid {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .category-card {
+    padding: 1.5rem;
+  }
+}
